@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
+@import "tailwindcss";
+*{
+  font-family: "Sen" , 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* index.css */
+html {
+  scroll-behavior: smooth;
+}
+
+
+@theme {
+  --color-primary: #092147;
+  --color-secondary: #F5F5F5;
+  --color-lightblue: #90AAD6;
+  --color-lightform : rgba(144, 170, 214, 0.5);
+  --color-sky: #2563EB;
+  --color-sideblue: #174384;
+  --color-lightgrey: #7D7D7D;
+  --shadow-box: #FFFFFF -10px -10px 35px 0,
+  rgba(209,217,230,0.4) 10px 10px 40px 0 inset,
+  #D1D9E6 10px 10px 35px 0;
+}
