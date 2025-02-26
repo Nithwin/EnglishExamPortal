@@ -9,25 +9,27 @@ const Navbar = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
   console.log(pathname);
   return (
-    <section className='fixed top-0 left-0 w-full bg-primary py-[0.5rem]'>
+    <section className='fixed top-0 left-0 w-full bg-primary py-[0.5rem] lg:p-[1rem]'>
         <div className='flex items-center lg:justify-between'>
           <div className='flex items-center'>
             <img
-            className=''
+            className='w-16 lg:w-13'
             src={"/assets/logo.png"} alt="logo" height={64} width={64} />
-            <p className='text-secondary text-[2rem] font-bold'>Linglee</p>
+            <p className='text-secondary text-[2rem] font-bold lg:text-[1.5rem]'>Linglee</p>
           </div>
         <nav
-        className={`${openNavigation ? 'flex' : 'hidden'} fixed top-[5rem] left-0 right-0 bottom-0 bg-lightblue lg:flex lg:bg-transparent lg:static`}>
+        className={`${openNavigation ? 'flex' : 'hidden'} fixed top-[5rem] left-0 right-0 bottom-0 bg-lightblue lg:flex lg:bg-transparent lg:static lg:top-0`}>
           <ul className='relative flex justify-evenly items-center flex-col m-auto h-full lg:flex-row'>
             {
-              NavigationList.map((item) => (
-                <li className='py-[2rem] lg:ps-[5rem]'>
+              NavigationList.map((item,index) => (
+                <li
+                key={index}
+                className='py-[2rem] lg:ps-[5rem] lg:p-0'>
                   <Link
                   to={item.to}
                   key={item}
                   onClick={() => setOpenNavigation(false)}
-                  className={`block text-3xl lg:text-xl lg:font-normal font-bold uppercase ${item.isButton ? ` bg-primary py-3 px-10 rounded-full lg:hidden text-secondary`
+                  className={`block text-3xl lg:text-lg lg:font-normal font-bold uppercase ${item.isButton ? ` bg-primary py-3 px-10 rounded-full lg:hidden text-secondary`
                 :
                 `text-primary lg:border-b-2 lg:border-primary lg:hover:transition-all lg:hover:border-secondary lg:hover:ease-linear lg:hover:delay-100 ${(pathname.pathname === item.to) ? 'lg:text-secondary' : 'lg:text-gray-400'} lg:text-blue-400`} cursor-pointer`}>
                   {item.name}
@@ -38,7 +40,7 @@ const Navbar = () => {
             }
           </ul>
           <div className='hidden lg:flex items-center px-3'>
-            <Link to={"/admin-login"} className="uppercase cursor-pointer rounded-full hover:bg-primary hover:text-secondary border-2 border-secondary transition-colors ease-in delay-100 ext-primary bg-secondary py-2 px-[2rem] text-2xl font-semibold ">Admin</Link>
+            <Link to={"/admin-login"} className="uppercase cursor-pointer rounded-full hover:bg-primary hover:text-secondary border-2 border-secondary transition-colors ease-in delay-100 ext-primary bg-secondary py-2 px-[1.5rem] text-lg font-semibold ">Admin</Link>
           </div>
         </nav>
 
